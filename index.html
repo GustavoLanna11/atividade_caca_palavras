@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Caça-Palavras</title>
+</head>
+<body>
+    <script>
+        matriz = new Array;
+        matriz = [["", "", "", "", "P", "A", "L", "M", "E", "I", "R", "A", "S", "", "", "", "", "", "", "F"], 
+            ["", "", "", "", "", "", "", "", "", "", "", "", "Ã", "", "", "", "", "", "", "L"], 
+
+            ["C", "U", "I", "A", "B", "A", "", "", "", "", "", "", "O", "", "", "", "", "", "", "A"], 
+            ["", "", "", "", "", "", "", "", "", "", "", "", "P", "A", "R", "A", "N", "Á", "", "M"], 
+
+            ["", "", "I", "", "C", "", "", "", "", "", "", "", "A", "", "", "T", "", "", "", "E"], 
+            ["S", "A", "N", "T", "O", "S", "", "", "", "", "", "", "U", "", "", "H", "", "", "", "N"], 
+
+            ["", "", "T", "", "R", "", "", "", "", "B", "", "", "L", "", "", "L", "", "", "", "G"], 
+            ["", "", "E", "", "I", "", "", "", "", "R", "", "", "O", "", "", "É", "", "", "", "O"], 
+
+            ["", "", "R", "", "N", "", "", "", "", "A", "", "", "", "", "", "T", "", "", "C", ""], 
+            ["", "", "N", "", "T", "", "", "", "", "G", "", "", "", "", "", "I", "", "", "E", ""], 
+
+            ["", "", "A", "", "H", "", "", "", "", "A", "", "", "", "", "", "C", "", "", "A", ""], 
+            ["", "", "C", "", "I", "", "", "", "", "N", "", "", "", "", "", "O", "", "", "R", ""], 
+
+            ["", "", "I", "", "A", "", "", "", "", "T", "", "", "", "", "", "P", "", "", "A", ""], 
+            ["", "", "O", "", "N", "", "", "", "", "I", "", "", "", "", "", "R", "", "", "", ""], 
+
+            ["", "", "N", "", "S", "", "", "", "", "N", "", "", "", "", "", "", "", "", "", ""], 
+            ["", "", "A", "T", "L", "E", "T", "I", "C", "O", "-", "M", "G", "", "", "", "", "", "", ""], 
+
+            ["", "", "L", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", "", "", "B", "A", "H", "I", "A", "", "", "", "", "", ""], 
+
+            ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+            ["J", "U", "V", "E", "N", "T", "U", "D", "E", "", "", "", "", "", "", "", "", "", "", ""], 
+        
+        ];
+
+       
+
+        window.onload = function(){
+            for(let node of document.querySelectorAll("td")){
+                if(node.textContent != ""){
+                    node.className = "selected";
+                }
+                else{
+                    let charcode = Math.round(65 + Math.random() * 25)
+                    node.textContent = String.fromCharCode(charcode)
+                }
+            }
+        }
+
+        document.write("<h1>Caça-Palavras sobre Times Brasileiros de Futebol <br><br></h1><table border='1' align='center'>");
+        for (linha = 0; linha < 20; linha++){
+            document.write("<tr>")
+            for(coluna = 0; coluna < 20; coluna++){
+                document.write("<td>" + matriz[linha][coluna] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>")
+        document.write("<h2> Os times: Palmeiras, São Paulo, Internacional, Paraná, Athletico PR, Atlético MG, Corinthians, Juventude, Cuiabá, Santos, Bragantino e Bahia. </h2>")
+    </script>
+</body>
+</html>
